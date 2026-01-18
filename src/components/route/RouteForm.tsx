@@ -534,7 +534,7 @@ const RouteForm: React.FC<RouteFormProps> = ({ onRoutesCalculated, initialStart,
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    src={`https://www.google.com/maps/embed/v1/streetview?key=AIzaSyDrMHrimqV5AeG7K0LtwFdwcjKLFaFoZA0&location=${candidateRoutes[selectedRouteIndex].waypoints && candidateRoutes[selectedRouteIndex].waypoints.length > 0
+                    src={`https://www.google.com/maps/embed/v1/streetview?key={index}&location=${candidateRoutes[selectedRouteIndex].waypoints && candidateRoutes[selectedRouteIndex].waypoints.length > 0
                       ? `${candidateRoutes[selectedRouteIndex].waypoints[0].lat},${candidateRoutes[selectedRouteIndex].waypoints[0].lng}`
                       : `${candidateRoutes[selectedRouteIndex].startLocation.lat},${candidateRoutes[selectedRouteIndex].startLocation.lng}`}&heading=210&pitch=10&fov=80`}
                   />
