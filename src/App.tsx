@@ -7,7 +7,9 @@ import { UserProvider, useUser } from "@/contexts/UserContext";
 
 // Pages
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
 import Onboarding from "./pages/Onboarding";
+import BottomNav from "./components/BottomNav";
 
 const queryClient = new QueryClient();
 
@@ -53,8 +55,18 @@ const AppRoutes = () => {
             </RequireOnboarding>
           }
         />
+        <RouterRoute
+          path="/profile"
+          element={
+            <RequireOnboarding>
+              <Profile />
+            </RequireOnboarding>
+          }
+        />
         <RouterRoute path="*" element={<Navigate to="/" replace />} />
       </Routes>
+
+      {isOnboardingComplete && <BottomNav />}
     </>
   );
 };
